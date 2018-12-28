@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "picks")
+@Table(name = "picks", indexes = @Index(columnList = "title, body"))
 @Data
 @NoArgsConstructor	// （仮）
 @AllArgsConstructor	// （仮）
