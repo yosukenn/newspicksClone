@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -25,4 +27,7 @@ public class Pick {
 	private String body;
 	@Column(nullable = false)
 	private String source;
+	
+	@OneToMany(mappedBy = "pick")
+	private List<Comment> commentList;
 }
