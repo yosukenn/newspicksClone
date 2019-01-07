@@ -3,6 +3,9 @@ package com.demo.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -23,4 +26,7 @@ public class Comment {
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "userId")
 	private User user;
+	
+	@OneToMany(mappedBy = "comment")
+	private List<Like> likeList;
 }

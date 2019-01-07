@@ -29,5 +29,7 @@ public class User {
 	private String imageUrl;
 	
 	@OneToMany(mappedBy = "user")
-	private List<User> userList;
+	private List<Comment> commentList;
+	@OneToMany(mappedBy = "user")
+	private List<Like> likeList;
 }
