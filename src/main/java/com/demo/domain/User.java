@@ -1,9 +1,7 @@
 package com.demo.domain;
 
 import java.util.List;
-
 import javax.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,4 +30,6 @@ public class User {
 	private List<Comment> commentList;
 	@OneToMany(mappedBy = "user")
 	private List<Like> likeList;
+	@OneToMany(mappedBy = "user")
+	private List<Keyword> keywordList;
 }
