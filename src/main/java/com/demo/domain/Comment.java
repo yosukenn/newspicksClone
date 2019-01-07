@@ -16,11 +16,11 @@ public class Comment {
 	private Integer id;
 	@Column
 	private String comment;
+	
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "pickId")
 	private Pick pick;
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "userId")
 	private User user;
-	
 }
