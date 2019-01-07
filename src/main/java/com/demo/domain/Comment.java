@@ -7,7 +7,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "comments", indexes = @Index(columnList = "comments"))
+@Table(name = "comments", indexes = @Index(columnList = "comment"))
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
