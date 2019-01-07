@@ -28,4 +28,6 @@ public class Pick {
 	
 	@OneToMany(mappedBy = "pick")
 	private List<Comment> commentList;
+	@ManyToMany(mappedBy = "pickList")
+	private List<Theme> themeList;
 }
