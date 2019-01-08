@@ -11,6 +11,7 @@ import com.demo.repository.PickRepository;
 
 /**
  * ピック（ニュース）のサービスクラス。
+ * 機能実装するごとに必要なメソッドを追記していく。
  * 
  * @author yosukenn
  *
