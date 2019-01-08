@@ -14,9 +14,11 @@ public class Like {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "commentId", nullable = false)
 	private Comment comment;
+	
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "userId", nullable = false)
 	private User user;

@@ -15,6 +15,7 @@ public class Keyword {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	@Column(nullable = false)
 	private String keyword;
 	

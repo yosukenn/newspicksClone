@@ -15,6 +15,7 @@ public class Theme {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	@Column(nullable = false, unique = true)
 	private String name;
 	

@@ -15,19 +15,25 @@ public class Pick {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	@Column(nullable = false, unique = true)
 	private String url;
+	
 	@Column(nullable = false)
 	private String imageUrl;
+	
 	@Column(nullable = false)
 	private String title;
+	
 	@Column(nullable = false)
 	private String body;
+	
 	@Column(nullable = false)
 	private String source;
 	
 	@OneToMany(mappedBy = "pick")
 	private List<Comment> commentList;
+	
 	@ManyToMany(mappedBy = "pickList")
 	private List<Theme> themeList;
 }

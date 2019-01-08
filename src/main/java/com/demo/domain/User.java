@@ -15,21 +15,28 @@ public class User {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	@Column(nullable = false)
 	private String firstName;
+	
 	@Column(nullable = false)
 	private String lastName;
+	
 	@Column
 	private String position;
+	
 	@Column
 	private String profile;
+	
 	@Column
 	private String imageUrl;
 	
 	@OneToMany(mappedBy = "user")
 	private List<Comment> commentList;
+	
 	@OneToMany(mappedBy = "user")
 	private List<Like> likeList;
+	
 	@OneToMany(mappedBy = "user")
 	private List<Keyword> keywordList;
 }
