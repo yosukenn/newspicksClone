@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>NewsPicks|トップ</title>
+</head>
+<body>
+	<div class="container" th:each="pick : ${picks}">
+		<h2 th:text="${pick.title}">タイトル</h2>
+	</div>
+</body>
+</html>
