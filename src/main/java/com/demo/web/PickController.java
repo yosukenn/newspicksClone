@@ -15,7 +15,7 @@ import com.demo.service.PickService;
  *
  */
 @Controller
-@RequestMapping("pikcs")
+@RequestMapping("picks")
 public class PickController {
 	@Autowired
 	PickService pickService;
