@@ -22,7 +22,7 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="#">Home
+				<li class="nav-item active"><a class="nav-link" href="#">UserName
 						<span class="sr-only">(current)</span>
 				</a></li>
 			</ul>
@@ -37,10 +37,37 @@
 	<!-- コンテンツ -->
 	<div class="container-fluid bg-light pt-1">
 		<div class="container">
-			<div th:each="pick : ${picks}">
-				<!-- アイキャッチ -->
-				<!-- ニュースカードたち -->
-				<h2 th:text="${pick.title}">タイトル</h2>
+			<!-- アイキャッチ -->
+			<!-- ニュースカードたち -->
+			<div class="row py-2">
+				<div th:each="seq : ${#numbers.sequence(4, 6)}">
+					<div class="card mx-4" style="width: 325px; height: 500px;">
+						<img th:src="${picks[seq].imageUrl}" class="card-img-top"
+							alt="..." style="height: 200px;">
+						<div class="card-body" style="height: 300px;">
+							<h5 class="card-title" th:text="${picks[seq].title}">Card
+								title</h5>
+							<p class="card-text overflow-hidden" th:text="${picks[seq].body}">Some
+								quick example text to build on the card title and make up the
+								bulk of the card's content.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row py-4">
+				<div th:each="seq : ${#numbers.sequence(7, 9)}">
+					<div class="card mx-4" style="width: 325px; height: 500px;">
+						<img th:src="${picks[seq].imageUrl}" class="card-img-top"
+							alt="..." style="height: 200px;">
+						<div class="card-body" style="height: 300px;">
+							<h5 class="card-title" th:text="${picks[seq].title}">Card
+								title</h5>
+							<p class="card-text overflow-hidden" th:text="${picks[seq].body}">Some
+								quick example text to build on the card title and make up the
+								bulk of the card's content.</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
