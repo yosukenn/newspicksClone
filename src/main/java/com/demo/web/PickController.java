@@ -51,11 +51,11 @@ public class PickController {
 	 * @return 検索結果を表示する画面のパス
 	 */
 	@GetMapping(path = "search")
-	String search(@Validated PickSearchForm keyword, BindingResult result, Model model) {
+	String search(@Validated PickSearchForm form, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			return index(model);
 		}
-		List<Pick> picks = pickService.findByKeyword(keyword);
+		List<Pick> picks = pickService.findByKeyword(form.getKeyword());
 		model.addAttribute("picks", picks);
 		return "picks/search";
 	}
