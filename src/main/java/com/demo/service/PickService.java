@@ -32,4 +32,13 @@ public class PickService {
 	public List<Pick> findAll() {
 		return pickRepository.findAll();
 	}
+	
+	/**
+	 * ピックをキーワードから検索する業務ロジック
+	 * @param keyword ユーザがフォームに入力したキーワード
+	 * @return DBから取得した、キーワードをタイトル(title)、本文(body)に含むピックのリスト
+	 */
+	public List<Pick> findByKeyword(String keyword) {
+		return pickRepository.findByKeyword(keyword);
+	}
 }
