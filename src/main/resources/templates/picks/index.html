@@ -23,9 +23,9 @@
 						<span class="sr-only">(current)</span>
 				</a></li>
 			</ul>
-			<form class="form-inline my-2 my-lg-0">
+			<form class="form-inline my-2 my-lg-0" th:action="@{/picks/search}" th:object="${pickSearchForm}" method="get">
 				<input class="form-control mr-sm-2" type="search"
-					placeholder="Search" aria-label="Search">
+					placeholder="Search" aria-label="Search" name="keyword" th:field="*{keyword}" th:errorclass="error-input">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
 		</div>
