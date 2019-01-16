@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	  th:replace="~{layout :: layout(~{::title}, ~{::body/content()})}">
 <head>
-	<title>NewsPicks|郢晏現繝｣郢晢ｿｽ</title>
+	<title>NewsPicks|トップ</title>
 </head>
 <body>
-	<!-- 郢ｧ�ｽｳ郢晢ｽｳ郢晢ｿｽ郢晢ｽｳ郢晢ｿｽ -->
+	<!-- コンテンツ -->
 	<div class="container-fluid pt-1">
-		<!-- 郢ｧ�ｽ｢郢ｧ�ｽ､郢ｧ�ｽｭ郢晢ｽ｣郢晢ｿｽ郢晢ｿｽ -->
+		<!-- アイキャッチ -->
 		<div id="carouselExampleControls" class="carousel slide"
 			data-ride="carousel">
 			<div class="carousel-inner">
@@ -39,7 +39,7 @@
 				class="sr-only">Next</span>
 			</a>
 		</div>
-		<!-- 郢昜ｹ斟礼ｹ晢ｽｼ郢ｧ�ｽｹ郢ｧ�ｽｫ郢晢ｽｼ郢晏ｳｨ笳�邵ｺ�ｽ｡ -->
+		<!-- ニュースカードたち -->
 		<div class="pl-3">
 			<div class="row py-2">
 				<div th:each="seq : ${#numbers.sequence(4, 6)}">
