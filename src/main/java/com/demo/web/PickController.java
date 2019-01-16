@@ -50,7 +50,7 @@ public class PickController {
 	 * @param model 画面に渡す値をModelオブジェクトの属性に設定
 	 * @return 検索結果を表示する画面のパス
 	 */
-	@GetMapping(path = "search")
+	@GetMapping("search")
 	String search(@Validated PickSearchForm form, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			return index(model);
