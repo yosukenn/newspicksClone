@@ -55,6 +55,7 @@ public class PickController {
 		if (result.hasErrors()) {
 			return index(model);
 		}
+		model.addAttribute("keyword", form.getKeyword());
 		List<Pick> picks = pickService.findByKeyword(form.getKeyword());
 		model.addAttribute("picks", picks);
 		return "picks/search";
