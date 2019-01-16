@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja"
+	  xmlns:th="http://www.thymeleaf.org"
+	  th:fragment="layout (title, body)">
+<head>
+	<meta charset="UTF-8" />
+	<title th:replace="${title}">NewsPicks</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+</head>
+<body>
+	<!-- ヘッダ -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">NEWSPICKS</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">UserName
+						<span class="sr-only">(current)</span>
+				</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0" th:action="@{/picks/search}" th:object="${pickSearchForm}" method="get">
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Search" aria-label="Search" name="keyword" th:field="*{keyword}" th:errorclass="error-input">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+	
+	<div th:replace="${body}">Fake Content</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
