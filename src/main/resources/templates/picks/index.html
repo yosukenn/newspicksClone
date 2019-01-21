@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	  th:replace="~{layout :: layout(~{::title}, ~{::body/content()})}">
 <head>
-	<title>NewsPicks|トップ</title>
+	<title>NewsPicks|繝医ャ繝�</title>
 </head>
 <body>
-	<!-- コンテンツ -->
+	<!-- 繧ｳ繝ｳ繝�繝ｳ繝� -->
 	<div class="container-fluid pt-1">
-		<!-- アイキャッチ -->
+		<!-- 繧｢繧､繧ｭ繝｣繝�繝� -->
 		<div id="carouselExampleControls" class="carousel slide"
 			data-ride="carousel">
 			<div class="carousel-inner">
@@ -39,7 +39,7 @@
 				class="sr-only">Next</span>
 			</a>
 		</div>
-		<!-- ニュースカードたち -->
+		<!-- 繝九Η繝ｼ繧ｹ繧ｫ繝ｼ繝峨◆縺｡ -->
 		<div class="pl-3">
 			<div class="row py-2">
 				<div th:each="seq : ${#numbers.sequence(4, 6)}">
@@ -59,7 +59,7 @@
 			</div>
 			<div class="row py-4">
 				<div th:each="seq : ${#numbers.sequence(7, 9)}">
-					<div class="card mx-3" style="width: 345px; height: 500px;">
+					<div class="card mx-2" style="width: 345px; height: 500px;">
 						<img th:src="${picks[seq].imageUrl}" class="card-img-top"
 							alt="..." style="height: 200px;">
 						<div class="card-body" style="height: 300px;">
