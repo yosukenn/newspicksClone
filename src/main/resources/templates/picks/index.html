@@ -5,9 +5,9 @@
 	<title>NewsPicks|トップ</title>
 </head>
 <body>
-	<!-- 繧ｳ繝ｳ繝�繝ｳ繝� -->
+	<!-- コンテンツ -->
 	<div class="container-fluid pt-1">
-		<!-- 繧｢繧､繧ｭ繝｣繝�繝� -->
+		<!-- アイキャッチ -->
 		<div id="carouselExampleControls" class="carousel slide"
 			data-ride="carousel">
 			<div class="carousel-inner">
@@ -39,7 +39,7 @@
 				class="sr-only">Next</span>
 			</a>
 		</div>
-		<!-- 繝九Η繝ｼ繧ｹ繧ｫ繝ｼ繝峨◆縺｡ -->
+		<!-- ニュースカードたち -->
 		<div class="pl-3">
 			<div class="row py-2">
 				<div th:each="seq : ${#numbers.sequence(4, 6)}">
