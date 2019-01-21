@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  th:replace="~{layout :: layout(~{::title}, ~{::body/content()})}">
+<head>
+	<title th:text="${keyword} + の検索結果"> -- の検索結果</title>
+</head>
+<body>
+	<div th:each="pick : ${picks}" class="py-4">
+		<div class="card mx-3 d-block p-2" style="height: 230px;">
+			<img th:src="${pick.imageUrl}"
+				class="card-img-top w-25 d-inline-block h-100 align-top" alt="...">
+			<div class="card-body d-inline-block h-100" style="width: 70%;">
+				<h5 class="card-title h-25" th:text="${pick.title}"
+					style="overflow: hidden;">Card title</h5>
+				<p class="card-text h-75" th:text="${pick.body}"
+					style="overflow: hidden;">Some quick example text to build on
+					the card title and make up the bulk of the card's content.</p>
+			</div>
+		</div>
+	</div>
+</body>
