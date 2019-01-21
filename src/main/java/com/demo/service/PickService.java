@@ -49,6 +49,12 @@ public class PickService {
 		return pickRepository.findByKeyword(keyword);
 	}
 	
+	/**
+	 * 入力されたURLからピックを作成、保存する業務ロジック
+	 * @param url ユーザが入力したニュース記事のURL
+	 * @return 作成したピック
+	 * @throws IOException
+	 */
 	public Pick create(String url) throws IOException {
 		Pick pick = getNewsInfo(url);
 		System.out.println(pick);
