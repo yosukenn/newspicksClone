@@ -45,7 +45,7 @@ public class PickController {
 	
 	/**
 	 * ユーザが入力したキーワードから検索画面を表示させるメソッド。
-	 * @param keyword ユーザが入力したキーワード
+	 * @param form ユーザが入力したキーワード
 	 * @param result キーワードをバリデーションにかけた結果が格納される
 	 * @param model 画面に渡す値をModelオブジェクトの属性に設定
 	 * @return 検索結果を表示する画面のパス

@@ -18,6 +18,6 @@ import com.demo.domain.Pick;
 @Repository
 public interface PickRepository extends JpaRepository<Pick, Integer> {
 
-	@Query("SELECT DISTINCT p FROM Pick p where p.title like %:keyword% OR p.body like %:keyword% ORDER BY p.id DESC")
+	@Query("SELECT p FROM Pick p where p.title like %:keyword% OR p.body like %:keyword% ORDER BY p.id DESC")
 	List<Pick> findByKeyword(@Param("keyword") String keyword);
 }
