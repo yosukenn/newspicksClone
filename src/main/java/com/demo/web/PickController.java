@@ -1,6 +1,8 @@
 package com.demo.web;
 
 import java.util.List;
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +29,17 @@ public class PickController {
 	 * @return 検索フォームのパラメータをバインドする PickSearchForm クラス
 	 */
 	@ModelAttribute
-	PickSearchForm setUpForm() {
+	PickSearchForm setUpSearchForm() {
 		return new PickSearchForm();
+	}
+	
+	/**
+	 * ピックフォームを初期化するメソッド。
+	 * @return 入力した、ピックしたいURLをバインドする PickForm クラス
+	 */
+	@ModelAttribute
+	PickForm serUpFrom() {
+		return new PickForm();
 	}
 	
 	/**
@@ -59,5 +70,24 @@ public class PickController {
 		List<Pick> picks = pickService.findByKeyword(form.getKeyword());
 		model.addAttribute("picks", picks);
 		return "picks/search";
+	}
+	
+	/**
+	 * ピックしたい記事のURLをユーザーが送信した時の処理をマッピング。
+	 * 記事作成後、トップにリダイレクトさせる。
+	 * @param form ユーザーが入力した「記事のURL」
+	 * @param result URLにバリデーションした結果が格納される。
+	 * @param model 画面に渡す値を格納するが、今回は不要？
+	 * @return トップにリダイレクトするパス
+	 */
+	@PostMapping("create")
+	String create(@Validated PickForm form, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			return index(model);
+		}
+		String url = "";
+		BeanUtils.copyProperties(form, url);
+		pickService.create(url);
+		return "redirect:/picks";
 	}
 }
