@@ -59,19 +59,19 @@
 						</button>
 					</div>
 					<form class="formz my-2 my-lg-0"
-							th:action="@{/picks/search}" th:object="${pickSearchForm}"
+							th:action="@{/picks/create}" th:object="${pickForm}"
 							method="post">
 					<div class="modal-body">
-						<input class="form-control mr-sm-2" type="search"
-								placeholder="URL" aria-label="Pick" name="keyword"
-								th:field="*{keyword}" th:errorclass="error-input">
+						<input class="form-control mr-sm-2" type="text"
+								placeholder="URL" aria-label="Pick" name="url"
+								th:field="*{url}" th:errorclass="error-input">
 						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-primary">Save
-							changes</button>
+							</button>
 					</div>
 					</form>
 				</div>

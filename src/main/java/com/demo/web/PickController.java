@@ -1,9 +1,12 @@
 package com.demo.web;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -81,13 +84,21 @@ public class PickController {
 	 * @return トップにリダイレクトするパス
 	 */
 	@PostMapping("create")
-	String create(@Validated PickForm form, BindingResult result, Model model) {
+	String create(@Validated PickForm form, BindingResult result, Model model) throws IOException {
 		if (result.hasErrors()) {
 			return index(model);
 		}
-		String url = "";
-		BeanUtils.copyProperties(form, url);
-		pickService.create(url);
+		pickService.create(form.getUrl());
 		return "redirect:/picks";
+	}
+	
+	/**
+	 * IOException の例外ハンドラー
+	 * @param e エラーオブジェクト
+	 * @return エラー時のJSONメッセージ
+	 */
+	@ExceptionHandler(IOException.class)
+	public ResponseEntity<String> handleIOException(IOException e){
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
