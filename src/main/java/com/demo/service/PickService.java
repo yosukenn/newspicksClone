@@ -56,7 +56,7 @@ public class PickService {
 	 * @throws IOException
 	 */
 	public Pick create(String url) throws IOException {
-		Pick pick = getNewsInfo(url);
+		Pick pick = createPickByScraping(url);
 		System.out.println(pick);
 		return pickRepository.save(pick);
 	}
@@ -67,7 +67,7 @@ public class PickService {
 	 * @return スクレイピングした記事情報から生成した記事オブジェクト
 	 * @throws IOException
 	 */
-	private Pick getNewsInfo(String url) throws IOException {
+	private Pick createPickByScraping(String url) throws IOException {
 		// 渡されたURLのHTML情報を取得
 		Document document = Jsoup.connect(url).get();
 		
