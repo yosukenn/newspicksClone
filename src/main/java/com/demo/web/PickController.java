@@ -94,7 +94,7 @@ public class PickController {
 	
 	/**
 	 * IOException の例外ハンドラー
-	 * 暫定的な処置としてJSONを返す
+	 * Ajax でフォームにエラーメッセージを表示したいが、暫定的な処置としてJSONを返す
 	 * @param e エラーオブジェクト
 	 * @return エラー時のJSONメッセージ
 	 */
