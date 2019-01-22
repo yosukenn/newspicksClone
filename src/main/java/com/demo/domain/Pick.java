@@ -20,7 +20,7 @@ import javax.persistence.*;
 public class Pick {
 	/** ピックID */
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	/** ピックした記事のURL */
